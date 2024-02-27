@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Course } from '../model/course';
 
 @Component({
   selector: 'course-card',
@@ -10,4 +11,13 @@ import { CommonModule } from '@angular/common';
 })
 export class CourseCardComponent {
 
+  @Input({
+    required: true
+  })
+  course: Course;
+
+  constructor() {}
+
+  ngOnInit() {
+  }
 }
