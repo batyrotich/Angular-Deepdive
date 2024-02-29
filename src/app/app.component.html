@@ -7,10 +7,15 @@
 
 
 <div class="courses">
+@for(course of courses; track course.id){
 
-<course-card (courseSelected)="onCourseSelected($event)" [course]="coreCourse"></course-card>
-<course-card [course]="rxjsCourse"></course-card>
-<course-card [course]="ngrxCourse"></course-card>
+
+<course-card 
+[course]="course"(courseSelected)="onCourseSelected($event)" />
+}
+@empty{
+    <h1>No courses Found!</h1>
+}
 
 </div>
 
