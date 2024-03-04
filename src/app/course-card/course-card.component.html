@@ -1,10 +1,20 @@
 <div class="course-card">
 
     <div class="course-title">
-{{cardIndex  + '' + course.description}}
+        {{course.description}}
     </div>
-    <img width="300" alt="Angular Logo"
-         [src]="course.iconUrl">
+
+    @if (course.id ==1){
+        <h2>Course with ID 1 detected</h2>
+    }
+    @if (course.iconUrl){
+        <img width="300" alt="Angular Logo"
+             [src]="course.iconUrl">
+    }
+
+    @else {
+        <h2> No image Available</h2>
+    }
 
     <div class="course-description">
         {{course.longDescription}}
