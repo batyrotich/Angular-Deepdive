@@ -7,24 +7,17 @@
 
 
 <div class="courses">
-@for(course of courses; track trackCourse; let count = $count; 
-let first =$first; let last =$last; let odd =$odd;){
 
-    <h1>count {{count}}</h1>
+<course-card *ngFor="let course of courses; index as i; first as isFirst;
+last as isLast; even as isEven; odd as isOdd;"
 
-
-<course-card 
+[class.is-first]="isFirst"
 [course]="course"
-[index]="$index"
-[class.is-first]="first"
-[class.is-last]="last"
-[class.is-even]="$even"
-[class.is-odd]="odd"
+[cardIndex]="i + 1"
+[class.is-last]="isLast"
+[class.is-even]="isEven"
+[class.is-odd]="isOdd"
 (courseSelected)="onCourseSelected($event)" />
-}
-@empty{
-    <h1>No courses Found!</h1>
-}
 
 </div>
 
