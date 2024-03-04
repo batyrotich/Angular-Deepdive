@@ -15,5 +15,6 @@ courses= [...COURSES];
   onCourseSelected(course:Course){
     console.log("App component - click event bubbled..", course);
   }
+  
 
 }
