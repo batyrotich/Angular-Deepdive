@@ -22,6 +22,7 @@ export class CourseCardComponent {
 
   @Output('courseSelected')
   courseEmitter = new EventEmitter<Course>();
+noImage: any;
 
   constructor() {}
 
