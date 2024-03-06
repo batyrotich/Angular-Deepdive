@@ -1,7 +1,8 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import {COURSES} from '../db-data';
 import { Course } from './model/course';
 import { CourseCardComponent } from './course-card/course-card.component';
+  
 
 @Component({
   selector: 'app-root',
@@ -13,12 +14,14 @@ export class AppComponent {
  
 courses= [...COURSES];
 
-@ViewChild(CourseCardComponent)
-card:CourseCardComponent
+@ViewChild('cardRef1', {read:ElementRef})
+card1:CourseCardComponent
 
+@ViewChild('container')
+containerDiv:ElementRef;
 
   onCourseSelected(course:Course){
-    console.log("this.card");
+    console.log("containerDiv, this.containerDiv");
   }
   
   }
