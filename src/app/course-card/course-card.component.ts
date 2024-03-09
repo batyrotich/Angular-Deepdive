@@ -1,6 +1,7 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, ContentChild, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Course } from '../model/course';
+import { CourseImageComponent } from '../course-image/course-image.component';
 
 @Component({
   selector: 'course-card',
@@ -19,7 +20,10 @@ export class CourseCardComponent {
 
   @Output('courseSelected')
   courseEmitter = new EventEmitter<Course>();
-noImage: any;
+
+  @ContentChild('CourseImageComponent')
+  image: CourseImageComponent;
+
 
   constructor() {}
 
@@ -30,8 +34,7 @@ noImage: any;
   }
 
   onCourseViewed(){
-    console.log("card component - button clicked...");
-    this.courseEmitter.emit(this.course);
+      this.courseEmitter.emit(this.course);
     }
     cardClasses(){
       if(this.course.category == 'BEGINNER'){
