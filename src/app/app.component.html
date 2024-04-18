@@ -5,8 +5,25 @@
 
 </div>
 
+
+<!-- we have instanciated,  we need to provide the context-->
+
+<hr>
+
+<hr>
 <div class="courses" *ngIf="courses[0] as course">
-    <course-card  
+    <ng-template #blankImage let -courseName>  
+        <p class="warn"> {{courseName}}No image is available Yet</p>
+        <img  src="/assets/empty-image.png">
+    
+    </ng-template>
+    <ng-container *ngTemplateOutlet="blankImage; context: {description: course.description}">
+
+    </ng-container>
+    
+
+
+<course-card  
     (courseSelected)="onCourseSelected($event)"
      [course]="course">
      <course-image [src]="course.iconUrl"></course-image>
@@ -16,6 +33,4 @@
      </div>
      </course-card>
 
-</div>
-
-
+    </div>

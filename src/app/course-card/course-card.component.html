@@ -3,7 +3,12 @@
     <div class="course-title">
         {{ cardIndex  || '' + '' + course.description}}
     </div>
-    <ng-content select="course-img"></ng-content>
+
+    
+    <ng-content select="course-image" 
+        *ngIf="course.iconUrl; else blankImage">
+    </ng-content>
+
     <ng-content select=".course-description"></ng-content>
 
 

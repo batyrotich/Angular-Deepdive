@@ -10,6 +10,9 @@ import { CourseCardComponent } from './course-card/course-card.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements AfterViewInit {
+onCourseSelected($event: any) {
+throw new Error('Method not implemented.');
+}
   ngAfterViewInit() {
     console.log("this.cards");
    

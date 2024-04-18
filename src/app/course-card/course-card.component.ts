@@ -2,7 +2,7 @@ import { Component, ContentChild, EventEmitter, Input, OnInit, Output, ViewChild
 import { CommonModule } from '@angular/common';
 import { Course } from '../model/course';
 import { CourseImageComponent } from '../course-image/course-image.component';
-
+import { NgIf } from '@angular/common';
 @Component({
   selector: 'course-card',
   standalone: true,
